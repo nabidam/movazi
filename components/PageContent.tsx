@@ -170,8 +170,8 @@ export default function PageContent({ data }: { data: PageDataType }) {
 		} else if (e.touches.length === 2) {
 			// Two touches - pinch to zoom
 			e.preventDefault();
-			const touch1 = e.touches.item(0);
-			const touch2 = e.touches.item(1);
+			const touch1 = e.touches.item(0) as Touch;
+			const touch2 = e.touches.item(1) as Touch;
 			const distance = getDistance(touch1, touch2);
 			const midpoint = getMidpoint(touch1, touch2);
 
@@ -207,8 +207,8 @@ export default function PageContent({ data }: { data: PageDataType }) {
 		} else if (e.touches.length === 2 && isPinching) {
 			// Two touches - pinch to zoom
 			e.preventDefault();
-			const touch1 = e.touches.item(0);
-			const touch2 = e.touches.item(1);
+			const touch1 = e.touches.item(0) as Touch;
+			const touch2 = e.touches.item(1) as Touch;
 			const currentDistance = getDistance(touch1, touch2);
 			const scale = currentDistance / pinchStart.distance;
 
