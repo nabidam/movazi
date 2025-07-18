@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Movazi project
+A simple nextjs project that serves some pages that stored in `sqlite` and uses `pm2` to run the daemon.
 
-## Getting Started
-
-First, run the development server:
-
+## Instructions
+install the dependencies by running:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm isntall # or yarn
+```
+copy the `data.db` file (initialized locally) to path `database/data.db`.
+update file `ecosystem.config.js`:
+- value of `cwd` should be the path of the project (run `pwd` in the root)
+- value of `interpreter` should be the path of the nodejs binary (run `whereis node`)
+
+build the app:
+```bash
+npm run build # or yarn build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+start the app by running:
+```bash
+pm2 start ecosystem.config.js
+pm2 startup # handles startup script
+pm2 save # saves the status for next reboots
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+now the app runs on port `3000` and you can use `nginx` for reverse proxy and serve it with ssl.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+copy `nginx.conf` in path `/etc/sites-available/sitename`.
 
-## Learn More
+change `host` value in the config file.
 
-To learn more about Next.js, take a look at the following resources:
+use `certbot` to get the certifications.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+create a link of config in the enabled configs of nginx:
+```bash
+ln -s /etc/sites-available/sitename /etc/sites-enabled/sitename
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+now restart the nginx, and check the domain :)
