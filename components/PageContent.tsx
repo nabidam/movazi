@@ -717,6 +717,8 @@ export default function PageContent({ data }: { data: PageDataType }) {
 							onPause={() => setIsPlaying(false)}
 							onPlay={() => setIsPlaying(true)}
 							crossOrigin="anonymous"
+							autoPlay
+							muted
 						>
 							<source src={data.sound} type="audio/mpeg" />
 							Your browser does not support the audio element.
