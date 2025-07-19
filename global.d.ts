@@ -7,4 +7,5 @@ type PageDataType = {
 	artwork_new: string;
 	video: string;
 	sound: string;
+	color: string;
 };
