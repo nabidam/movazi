@@ -7,5 +7,6 @@ CREATE TABLE pages (
     artwork_new TEXT,
     statement TEXT,
     video TEXT,
-    sound TEXT
+    sound TEXT,
+    color TEXT
 );
