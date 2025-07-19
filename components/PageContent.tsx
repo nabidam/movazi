@@ -368,7 +368,13 @@ export default function PageContent({ data }: { data: PageDataType }) {
 			<div className="container mx-auto px-4 py-4 pb-36 relative z-10">
 				{/* Art Title Section */}
 				<div className="text-center mb-6">
-					<h1 className="py-2 text-4xl md:text-6xl font-bold bg-gradient-to-r from-white via-red-100 to-red-200 bg-clip-text text-transparent mb-4">
+					<h1
+						className={`py-2 text-4xl md:text-6xl font-bold bg-gradient-to-r from-white via-${
+							data.color ?? "red"
+						}-100 to-${
+							data.color ?? "red"
+						}-200 bg-clip-text text-transparent mb-4`}
+					>
 						{data.title}
 					</h1>
 					{data.subtitle ? (
@@ -391,7 +397,9 @@ export default function PageContent({ data }: { data: PageDataType }) {
 									className="flex items-center gap-2 text-white hover:bg-white/10 rounded-full px-4 py-2"
 								>
 									{isCompareMode ? (
-										<ToggleRight className="w-5 h-5 text-red-400" />
+										<ToggleRight
+											className={`w-5 h-5 text-${data.color ?? "red"}-400`}
+										/>
 									) : (
 										<ToggleLeft className="w-5 h-5 text-gray-400" />
 									)}
@@ -410,7 +418,9 @@ export default function PageContent({ data }: { data: PageDataType }) {
 									<div className="relative group">
 										{/* Audio-reactive circular glows */}
 										<div
-											className={`absolute -inset-4 bg-red-600/10 rounded-full blur-3xl ${
+											className={`absolute -inset-4 bg-${
+												data.color ?? "red"
+											}-600/10 rounded-full blur-3xl ${
 												!isPlaying ? "animate-breathe-outer" : ""
 											}`}
 											style={
@@ -418,7 +428,9 @@ export default function PageContent({ data }: { data: PageDataType }) {
 											}
 										></div>
 										<div
-											className={`absolute -inset-2 bg-red-500/15 rounded-full blur-2xl ${
+											className={`absolute -inset-2 bg-${
+												data.color ?? "red"
+											}-500/15 rounded-full blur-2xl ${
 												!isPlaying ? "animate-breathe-middle" : ""
 											}`}
 											style={
@@ -426,7 +438,9 @@ export default function PageContent({ data }: { data: PageDataType }) {
 											}
 										></div>
 										<div
-											className={`absolute -inset-1 bg-red-400/20 rounded-full blur-xl ${
+											className={`absolute -inset-1 bg-${
+												data.color ?? "red"
+											}-400/20 rounded-full blur-xl ${
 												!isPlaying ? "animate-breathe-inner" : ""
 											}`}
 											style={
@@ -487,7 +501,11 @@ export default function PageContent({ data }: { data: PageDataType }) {
 													style={{ left: `${sliderPosition}%` }}
 												>
 													<div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center">
-														<div className="w-4 h-4 bg-red-600 rounded-full"></div>
+														<div
+															className={`w-4 h-4 bg-${
+																data.color ?? "red"
+															}-600 rounded-full`}
+														></div>
 													</div>
 												</div>
 											</div>
@@ -526,7 +544,9 @@ export default function PageContent({ data }: { data: PageDataType }) {
 										>
 											{/* Audio-reactive circular glows */}
 											<div
-												className={`absolute -inset-4 bg-red-600/10 rounded-full blur-3xl ${
+												className={`absolute -inset-4 bg-${
+													data.color ?? "red"
+												}-600/10 rounded-full blur-3xl ${
 													!isPlaying ? "animate-breathe-outer" : ""
 												}`}
 												style={
@@ -534,7 +554,9 @@ export default function PageContent({ data }: { data: PageDataType }) {
 												}
 											></div>
 											<div
-												className={`absolute -inset-2 bg-red-500/15 rounded-full blur-2xl ${
+												className={`absolute -inset-2 bg-${
+													data.color ?? "red"
+												}-500/15 rounded-full blur-2xl ${
 													!isPlaying ? "animate-breathe-middle" : ""
 												}`}
 												style={
@@ -542,7 +564,9 @@ export default function PageContent({ data }: { data: PageDataType }) {
 												}
 											></div>
 											<div
-												className={`absolute -inset-1 bg-red-400/20 rounded-full blur-xl ${
+												className={`absolute -inset-1 bg-${
+													data.color ?? "red"
+												}-400/20 rounded-full blur-xl ${
 													!isPlaying ? "animate-breathe-inner" : ""
 												}`}
 												style={
@@ -616,8 +640,16 @@ export default function PageContent({ data }: { data: PageDataType }) {
 
 						<div className="relative group">
 							{/* Video glow effects */}
-							<div className="absolute -inset-6 bg-red-600/10 rounded-2xl blur-2xl animate-breathe-outer"></div>
-							<div className="absolute -inset-4 bg-red-500/15 rounded-2xl blur-xl animate-breathe-middle"></div>
+							<div
+								className={`absolute -inset-6 bg-${
+									data.color ?? "red"
+								}-600/10 rounded-2xl blur-2xl animate-breathe-outer`}
+							></div>
+							<div
+								className={`absolute -inset-4 bg-${
+									data.color ?? "red"
+								}-500/15 rounded-2xl blur-xl animate-breathe-middle`}
+							></div>
 
 							<div className="relative backdrop-blur-xl bg-gray-800/30 rounded-2xl p-6 border border-gray-700/50 shadow-2xl">
 								<div className="relative aspect-video overflow-hidden rounded-lg">
@@ -681,29 +713,41 @@ export default function PageContent({ data }: { data: PageDataType }) {
 						<div className="relative">
 							{/* Audio-reactive circular glow for audio player */}
 							<div
-								className={`absolute -inset-8 bg-red-600/15 rounded-full blur-3xl ${
+								className={`absolute -inset-8 bg-${
+									data.color ?? "red"
+								}-600/15 rounded-full blur-3xl ${
 									!isPlaying ? "animate-breathe-audio" : ""
 								}`}
 								style={isPlaying ? getReactiveGlowStyle(0.4, "outer") : {}}
 							></div>
 							<div
-								className={`absolute -inset-6 bg-red-500/20 rounded-full blur-2xl ${
+								className={`absolute -inset-6 bg-${
+									data.color ?? "red"
+								}-500/20 rounded-full blur-2xl ${
 									!isPlaying ? "animate-breathe-middle" : ""
 								}`}
 								style={isPlaying ? getReactiveGlowStyle(0.3, "middle") : {}}
 							></div>
 
 							<div className="backdrop-blur-xl bg-gray-800/40 rounded-full p-6 border border-gray-700/50 flex items-center justify-center relative">
-								<div className="absolute inset-0 rounded-full bg-gradient-to-r from-red-600/20 to-red-500/20 animate-pulse-slow"></div>
+								<div
+									className={`absolute inset-0 rounded-full bg-gradient-to-r from-${
+										data.color ?? "red"
+									}-600/20 to-${data.color ?? "red"}-500/20 animate-pulse-slow`}
+								></div>
 								<Button
 									onClick={togglePlayPause}
 									size="lg"
 									className="rounded-full w-16 h-16 bg-gradient-to-br from-white to-gray-200 text-gray-900 hover:from-gray-100 hover:to-white shadow-md transform transition-transform duration-200 hover:scale-105 z-10"
 								>
 									{isPlaying ? (
-										<Pause className="w-6 h-6 text-red-900" />
+										<Pause
+											className={`w-6 h-6 text-${data.color ?? "red"}-900`}
+										/>
 									) : (
-										<Play className="w-6 h-6 ml-1 text-red-900" />
+										<Play
+											className={`w-6 h-6 ml-1 text-${data.color ?? "red"}-900`}
+										/>
 									)}
 								</Button>
 							</div>
