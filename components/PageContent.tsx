@@ -587,13 +587,14 @@ export default function PageContent({ data }: { data: PageDataType }) {
 				{data.statement ? (
 					<div className="max-w-3xl mx-auto mb-20">
 						<div className="backdrop-blur-xl bg-gray-800/30 rounded-2xl p-8 border border-gray-700/50 shadow-2xl">
-							<h2 className="text-2xl md:text-3xl font-bold text-center mb-6 bg-gradient-to-r from-red-300 to-red-100 bg-clip-text text-transparent">
+							{/* <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 bg-gradient-to-r from-red-300 to-red-100 bg-clip-text text-transparent">
 								استیتمنت
-							</h2>
+							</h2> */}
 							<div className="prose prose-lg prose-invert max-w-none">
-								<p className="text-gray-300 leading-relaxed mb-4 rtl-text text-justify">
-									{data.statement}
-								</p>
+								<p
+									className="text-gray-300 leading-relaxed mb-4 rtl-text text-justify"
+									dangerouslySetInnerHTML={{ __html: data.statement }}
+								/>
 							</div>
 						</div>
 					</div>
