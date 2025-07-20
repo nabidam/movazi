@@ -136,13 +136,6 @@ export default function QRGrid({ qrCodes }: { qrCodes: QRItemType[] }) {
 						</div>
 					))}
 				</div>
-
-				{/* Footer */}
-				<div className="mt-12 text-center">
-					<p className="text-red-300/60">
-						{"Click download to save your QR codes locally"}
-					</p>
-				</div>
 			</div>
 		</div>
 	);
