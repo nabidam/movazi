@@ -6,7 +6,7 @@ import Image from "next/image";
 import QRGrid from "@/components/QRGrid";
 
 const qrDir = path.join(process.cwd(), "public", "qrcodes");
-const domain = "https://movazi.nabidam.ir";
+const domain = process.env.DOMAIN || "https://movazi.nabidam.ir";
 
 async function ensureQR(user: UserType): Promise<QRItemType> {
 	const filePath = path.join(qrDir, `${user.username}.png`);
