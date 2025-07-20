@@ -9,3 +9,15 @@ type PageDataType = {
 	sound: string;
 	color: string;
 };
+
+type UserType = {
+	username: string;
+	title: string;
+};
+
+type QRItemType = {
+	username: string;
+	title: string;
+	qrPath: string;
+	url: string;
+};
