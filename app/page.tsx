@@ -17,6 +17,7 @@ async function ensureQR(user: UserType): Promise<QRItemType> {
 		await QRCode.toFile(filePath, fullUrl, {
 			errorCorrectionLevel: "H",
 			width: 2000,
+			margin: 0.2,
 		});
 	}
 
