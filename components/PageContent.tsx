@@ -15,6 +15,7 @@ import { Button } from "./ui/button";
 import { useEffect, useRef, useState } from "react";
 
 export default function PageContent({ data }: { data: PageDataType }) {
+	console.log({ data });
 	const [isPlaying, setIsPlaying] = useState(false);
 	const audioRef = useRef<HTMLAudioElement>(null);
 	// const [progressIndex, setProgressIndex] = useState(0);
