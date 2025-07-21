@@ -165,8 +165,36 @@
     url('/fonts/IranSharp/fonts/ttf/iransharp_regular_web.ttf') format('truetype');
 }
 
+/* Damoon */
+@font-face {
+  font-family: damoon;
+  font-style: normal;
+  font-weight: bold;
+  src: url('/fonts/Damoon/webfonts/DAMOONFANUM-Bold.woff2') format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/
+    url('/fonts/Damoon/webfonts/DAMOONFANUM-Bold.woff') format('woff')
+}
+
+@font-face {
+  font-family: damoon;
+  font-style: normal;
+  font-weight: 300;
+  src: url('/fonts/Damoon/webfonts/DAMOONFANUM-Light.woff2') format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/
+    url('/fonts/Damoon/webfonts/DAMOONFANUM-Light.woff') format('woff')
+}
+
+@font-face {
+  font-family: damoon;
+  font-style: normal;
+  font-weight: normal;
+  src: url('/fonts/Damoon/webfonts/DAMOONFANUM-Regular.woff2') format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/
+    url('/fonts/Damoon/webfonts/DAMOONFANUM-Regular.woff') format('woff')
+}
+
 body {
-  font-family: iransharp !important;
+  font-family: damoon !important;
   /* direction: rtl; */
 }
 
