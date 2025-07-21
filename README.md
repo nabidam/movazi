@@ -37,3 +37,6 @@ ln -s /etc/sites-available/sitename /etc/sites-enabled/sitename
 ```
 
 now restart the nginx, and check the domain :)
+
+## Tips
+browse path `/regenerate` to force reproduce QR codes.
