@@ -531,7 +531,7 @@ export default function PageContent({ data }: { data: PageDataType }) {
 									{[
 										{
 											id: 1,
-											caption: "Original Artwork",
+											caption: "اثر اصلی",
 											image: data.artwork_org,
 										},
 										{ id: 2, caption: data.title, image: data.artwork_new },
