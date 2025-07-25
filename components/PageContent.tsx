@@ -529,12 +529,12 @@ export default function PageContent({ data }: { data: PageDataType }) {
 								/* Side-by-Side Mode */
 								<div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-20">
 									{[
+										{ id: 2, caption: data.title, image: data.artwork_new },
 										{
 											id: 1,
 											caption: "اثر اصلی",
 											image: data.artwork_org,
 										},
-										{ id: 2, caption: data.title, image: data.artwork_new },
 									].map((item) => (
 										<div
 											key={item.id}
